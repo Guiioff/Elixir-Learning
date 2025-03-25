@@ -1,11 +1,15 @@
 defmodule StringUtils do
 
-  #4
+  @doc """
+  4 - Crie uma função que verifique se uma string é um palíndromo.
+  """
   def is_palindromo(str) do
     String.reverse(str) == str
   end
 
-  #5
+  @doc """
+  5 - Implemente uma função que conte o número de vogais em uma string.
+  """
   def contar_vogais(str) do
     vogais = ["a", "e", "i", "o", "u"]
     str

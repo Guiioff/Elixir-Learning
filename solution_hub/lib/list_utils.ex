@@ -1,6 +1,6 @@
 defmodule ListUtils do
 
-  @moduledoc """
+  @doc """
   6 - Implemente uma versão da função map/2 para aplicar uma função a todos os
   elementos de uma lista.
   """
@@ -9,7 +9,7 @@ defmodule ListUtils do
     [func.(head) | my_map(tail, func)]
   end
 
-  @moduledoc """
+  @doc """
   7 - Transforme uma lista de números, dobrando cada número, filtrando os que
   são maiores que 10 e somando os valores finais.
   """
@@ -20,7 +20,7 @@ defmodule ListUtils do
       |> Enum.reduce(0, fn x, acc -> x + acc end)
   end
 
-  @moduledoc """
+  @doc """
   9 - Recrie a função Enum.each/2, que recebe uma lista e uma função e executa essa função
   para cada elemento.
   """

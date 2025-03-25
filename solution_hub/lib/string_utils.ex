@@ -15,7 +15,7 @@ defmodule StringUtils do
       |> length()
   end
 
-  @moduledoc """
+  @doc """
   8 - Crie uma função que recebe uma tupla representando uma pessoa ({:ok, nome, idade}
   ou {:error, motivo}) e retorne uma mensagem apropriada.
   """
@@ -29,7 +29,7 @@ defmodule StringUtils do
     "Error: #{motivo}"
   end
 
-  @moduledoc """
+  @doc """
   10 - Crie uma função que recebe um mapa de produtos e
   retorna um novo mapa apenas com os produtos mais caros que R$50.
   """
@@ -39,7 +39,7 @@ defmodule StringUtils do
       |> Enum.into(%{}) #transforma um
   end
 
-  @moduledoc """
+  @doc """
   11 - Dado um conjunto de tuplas {produto, quantidade},
   calcule a soma total das quantidades usando Enum.reduce/3 e pipe operator
   """
@@ -48,9 +48,15 @@ defmodule StringUtils do
       |> Enum.reduce(0, fn {_name, number}, acc -> acc + number end)
   end
 
-  @moduledoc """
+  @doc """
   12 - Crie uma função que recebe uma string no formato "Nome,Idade,Cidade" e retorna um mapa
   """
+  @spec parse(binary()) :: %{
+          optional(:cidade) => binary(),
+          optional(:erro) => <<_::136>>,
+          optional(:idade) => integer(),
+          optional(:nome) => binary()
+        }
   def parse(str) do
     str
     |> String.split(",")

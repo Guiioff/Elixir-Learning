@@ -22,4 +22,16 @@ defmodule Filtering do
     |> abs()
   end
 
+  def tamanho_medio_strings([]), do: 0
+
+  def tamanho_medio_strings(lista) do
+    {soma, total} = calcular_soma_e_total(lista, 0, 0)
+    {:ok, soma / total}
+  end
+
+  defp calcular_soma_e_total([], soma, total), do: {soma, total}
+  defp calcular_soma_e_total([head | tail], soma_acc, total_acc) do
+    calcular_soma_e_total(tail, soma_acc + String.length(head), total_acc + 1)
+  end
+
 end

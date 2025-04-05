@@ -12,4 +12,10 @@ defmodule Calculator do
   end
   def calcular_area(_forma, _, _), do: {:error, "Forma inválida"}
 
+
+  def dividir(_num1, num2) when num2 == 0, do: {:error, "Divisão por Zero."}
+  def dividir(num1, num2), do: {:ok, num1 / num2}
+
+  def mostrar_resultado({:error, motivo}), do: "Erro: #{motivo}"
+  def mostrar_resultado({:ok, resultado}), do: "Resultado: #{resultado}"
 end

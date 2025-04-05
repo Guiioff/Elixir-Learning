@@ -7,4 +7,11 @@ defmodule Filtering do
     |> Enum.map(fn  %{nome: nome, cidade: cidade} -> "#{nome} -- #{cidade}" end)
   end
 
+
+  def filtrar_e_transformar(lista, funcao) do
+    lista
+    |> Enum.filter(funcao)
+    |> Enum.map(fn x -> x * 2 end)
+  end
+
 end

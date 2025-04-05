@@ -14,4 +14,12 @@ defmodule Filtering do
     |> Enum.map(fn x -> x * 2 end)
   end
 
+  def transformar_numeros(lista) do
+    lista
+    |> Enum.filter(fn x -> rem(x,2) == 0 end)
+    |> Enum.map(fn x -> x * 3 end)
+    |> Enum.reduce(0, fn acc, x -> x + acc end)
+    |> abs()
+  end
+
 end
